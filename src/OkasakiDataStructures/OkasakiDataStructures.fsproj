@@ -3,6 +3,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CustomStack.fs" />
+    <None Include="scratchpad.fsx" />
+    <Compile Include="CustomList.fs" />
   </ItemGroup>
+  <ItemGroup />
 </Project>
