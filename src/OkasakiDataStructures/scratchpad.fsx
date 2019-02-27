@@ -1,17 +1,17 @@
-﻿#load "CustomList.fs"
+﻿#load "SinglyLinkedList.fs"
 
-open OkasakiDataStructures.CustomList
+open OkasakiDataStructures
 
 let randomInt =
     let rnd = System.Random()
-    fun () -> rnd.Next()
+    fun () -> rnd.Next(100)
 
 let consRandom list =
-    cons (randomInt()) list
+    SinglyLinkedList.cons (randomInt()) list
 
 let createFourElementsList() =
     let rnd = System.Random()
-    empty
+    SinglyLinkedList.empty
     |> consRandom
     |> consRandom
     |> consRandom
@@ -20,8 +20,8 @@ let createFourElementsList() =
 let firstList = createFourElementsList()
 let secondList = createFourElementsList()
 
-let head = head firstList
-let tail = tail firstList
+let head = SinglyLinkedList.head firstList
+let tail = SinglyLinkedList.tail firstList
 
-let concated = firstList ++ secondList
-concated
+SinglyLinkedList.suffixes firstList
+
