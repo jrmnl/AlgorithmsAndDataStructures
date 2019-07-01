@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Searches.fs" />
     <Compile Include="Sorts.fs" />
   </ItemGroup>
 
