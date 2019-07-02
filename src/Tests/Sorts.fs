@@ -1,15 +1,12 @@
-module Tests.Sorts
+module Sorts
 
 open FsCheck.Xunit
 open IntroductionToAlgorithmsByCormen
 
-let private sameSeq seq1 seq2 =
-    let compare = Seq.compareWith Operators.compare
-    compare seq1 seq2 = 0
 
 let private isSorted sorter array  = 
     let expected = sorter array
-    expected |> sameSeq array
+    expected |> SeqUtils.seqEqual array
 
 let private isAscSorted = isSorted Seq.sort
 
