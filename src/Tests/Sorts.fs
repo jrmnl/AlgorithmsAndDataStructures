@@ -31,3 +31,8 @@ let ``Selection sort works correctly (Ascending)`` (unsorted:int[]) =
 let ``Bubble sort works correctly (Ascending)`` (unsorted:int[]) =
     BubbleSort.sort unsorted
     |> isAscSorted
+
+[<Property>]
+let ``Merge sort works correctly (Ascending)`` (unsorted:int[]) =
+    MergeSort.sort unsorted
+    |> isAscSorted
