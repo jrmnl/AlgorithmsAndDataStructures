@@ -21,3 +21,8 @@ let ``Insertion sort works correctly (Ascending)`` (unsorted:int[]) =
 let ``Insertion sort works correctly (Descending)`` (unsorted:int[]) =
     InsertionSort.sortDesc unsorted
     |> isDescSorted
+    
+[<Property>]
+let ``Selection sort works correctly (Ascending)`` (unsorted:int[]) =
+    SelectionSort.sort unsorted
+    |> isAscSorted

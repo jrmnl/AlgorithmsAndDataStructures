@@ -17,3 +17,16 @@ module InsertionSort =
 
     let sortDesc array =
         array |> sort (fun x y -> x < y)
+
+module SelectionSort =
+    let sort array =
+        let arr = Array.copy array
+        for i = 0 to arr.Length - 2 do
+            let mutable min = i
+            for j = i + 1 to arr.Length - 1 do
+                if (arr.[j] < arr.[min])
+                then min <- j
+            let temp = arr.[i]
+            arr.[i] <- arr.[min]
+            arr.[min] <- temp
+        arr
