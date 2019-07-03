@@ -26,3 +26,8 @@ let ``Insertion sort works correctly (Descending)`` (unsorted:int[]) =
 let ``Selection sort works correctly (Ascending)`` (unsorted:int[]) =
     SelectionSort.sort unsorted
     |> isAscSorted
+
+[<Property>]
+let ``Bubble sort works correctly (Ascending)`` (unsorted:int[]) =
+    BubbleSort.sort unsorted
+    |> isAscSorted

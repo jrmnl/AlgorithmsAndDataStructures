@@ -17,7 +17,7 @@ module InsertionSort =
 
     let sortDesc array =
         array |> sort (fun x y -> x < y)
-
+        
 module SelectionSort =
     let sort array =
         let arr = Array.copy array
@@ -29,4 +29,16 @@ module SelectionSort =
             let temp = arr.[i]
             arr.[i] <- arr.[min]
             arr.[min] <- temp
+        arr
+
+module BubbleSort =
+    let sort array =
+        let arr = Array.copy array
+        for i = 0 to arr.Length - 1 do
+            for j = arr.Length - 1 downto 1 do
+                if (arr.[j] < arr.[j - 1])
+                then
+                    let temp = arr.[j]
+                    arr.[j] <- arr.[j]
+                    arr.[j - 1] <- temp
         arr
