@@ -13,10 +13,10 @@ module InsertionSort =
         arr
         
     let sortAsc array =
-        array |> sort (fun x y -> x > y)
+        array |> sort (>)
 
     let sortDesc array =
-        array |> sort (fun x y -> x < y)
+        array |> sort (<)
         
 module SelectionSort =
     let sort array =
