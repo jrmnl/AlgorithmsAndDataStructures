@@ -87,3 +87,25 @@ module MergeSort =
         let arr = Array.copy array
         arr |> mergeSort 0 (arr.Length - 1)
         arr
+
+module MergeSortFunctionally =
+
+    let rec private merge (left:'a list) (right:'a list) =
+        match left, right with
+        | lHead::lTail, rHead::rTail ->
+            if (lHead < rHead)
+            then lHead :: (merge lTail right)
+            else rHead :: (merge rTail left)
+        | _::_, [] -> left
+        | [], _::_ -> right
+        | [], [] -> []
+
+    let rec sort list = 
+        match list with
+        | [] -> []
+        | [head] -> [head]
+        | _ -> 
+             let (left, right) = list |> List.splitAt (list.Length / 2)
+             let sortedLeft = sort left
+             let sortedRight = sort right
+             merge sortedLeft sortedRight
