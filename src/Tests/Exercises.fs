@@ -1,10 +1,6 @@
 ﻿module Exercises
 
 open FsCheck.Xunit
-open IntroductionToAlgorithmsByCormen
-open System.Linq
-open System.Collections
-open Xunit
 
 [<Property>]
 let ``Binary adding works correctly`` () =

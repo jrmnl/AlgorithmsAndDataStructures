@@ -4,7 +4,7 @@ open FsCheck.Xunit
 open IntroductionToAlgorithmsByCormen
 
 
-let private isSorted sorter seq  = 
+let private isSorted sorter seq =
     let expected = sorter seq
     expected |> SeqUtils.seqEqual seq
 
