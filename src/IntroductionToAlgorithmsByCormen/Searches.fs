@@ -2,7 +2,7 @@
 
 
 module LinearSearch =
-    let tryFindIndex (element:'T) (array:'T[]) =
+    let tryFindIndex element (array:'T[]) =
         let rec loop i =
             if (i >= array.Length)
             then None
@@ -13,15 +13,15 @@ module LinearSearch =
 
 module BinarySearch =
     /// Find element in sorted array
-    let tryFindIndex (element:'T) (array:'T[]) = 
-        let rec find (start:int) finish =
+    let tryFindIndex element (array:'T[]) = 
+        let rec find start finish =
             let len = start + finish
             let mid = len / 2
             if (array.[mid] = element)
             then Some mid
-            elif (mid <> start && array.[mid] > element)
+            elif (array.[mid] > element && mid > start)
             then find start (mid - 1)
-            elif (mid <> finish && array.[mid] < element)
+            elif (array.[mid] < element && mid < finish)
             then find (mid + 1) finish
             else None
 
