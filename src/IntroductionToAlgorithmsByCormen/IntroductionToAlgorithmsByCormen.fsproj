@@ -6,9 +6,9 @@
 
   <ItemGroup>
     <Compile Include="Utils\BinaryUtils.fs" />
-    <Compile Include="Exercises.fs" />
     <Compile Include="Searches.fs" />
     <Compile Include="Sorts.fs" />
+    <Compile Include="Exercises.fs" />
   </ItemGroup>
 
 </Project>
