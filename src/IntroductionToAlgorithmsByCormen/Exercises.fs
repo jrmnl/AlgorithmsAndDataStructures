@@ -35,6 +35,48 @@ module Exercises =
     
         // nlgn
         let sortedArray = MergeSort.sort array
-        // nlgn
+        // n
         sortedArray |> loop 0
+
+    // 4.1  The maximum-subarray problem. Find subarray with highest sum
+    let private findMaxCrossingSubarray low mid high (array:int[]) =
+        let mutable sum = array.[mid]
+        
+        let mutable leftSum = sum
+        let mutable maxLeft = mid
+        for i = mid - 1 downto low do
+            sum <- sum + array.[i]
+            if (sum > leftSum) then
+                leftSum <- sum
+                maxLeft <- i
+        
+        sum <- array.[mid + 1]
+        let mutable rightSum = sum
+        let mutable maxRight = mid + 1
+        for i = mid + 2 to high do
+            sum <- sum + array.[i]
+            if (sum > rightSum) then
+                rightSum <- sum
+                maxRight <- i
+        
+        maxLeft, maxRight, leftSum + rightSum
+
+    let rec private findMaxSubarrayRec low high (array:int[]) =
+        if (low = high)
+        then low, high, array.[low]
+        else
+            let mid = (low + high) / 2
+            let leftLow, leftHigh, leftSum =
+                array |> findMaxSubarrayRec low mid
+            let rightLow, rightHigh, rightSum =
+                array |> findMaxSubarrayRec (mid + 1) high
+            let crossLow, crossHigh, crossSum =
+                array |> findMaxCrossingSubarray low mid high
+            if (leftSum >= rightSum && leftSum >= crossSum)
+            then leftLow, leftHigh, leftSum
+            elif (rightSum >= leftSum && rightSum >= crossSum)
+            then rightLow, rightHigh, rightSum
+            else crossLow, crossHigh, crossSum
             
+    let rec findMaxSubarray (array:int[]) =
+        array |> findMaxSubarrayRec 0 (array.Length - 1)

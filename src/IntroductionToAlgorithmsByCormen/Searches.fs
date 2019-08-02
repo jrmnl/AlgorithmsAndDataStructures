@@ -29,7 +29,7 @@ module BinarySearch =
         then None
         else array |> find key 0 (array.Length - 1) 
         
-    /// Find element in sorted array begining provided index
+    /// Find element in sorted array begining from N index
     let tryFindIndexStarts index key (array:'T[]) = 
         if (array.Length < index)
         then invalidArg "index" "Index out of range"
