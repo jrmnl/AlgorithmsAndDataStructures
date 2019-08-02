@@ -46,3 +46,9 @@ let ``Find max subarray`` () =
     let result = ints |> Exercises.findMaxSubarray
 
     result = (7, 10, 43)
+    
+[<Property>]
+let ``Find max subarray on all negative ints`` () =
+    let ints = [| -25; -3; -3; -16; -23; -7; -5; -22; -4; |]
+    let result = ints |> Exercises.findMaxSubarray
+    result = (1, 1, -3)
