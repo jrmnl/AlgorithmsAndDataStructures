@@ -1,4 +1,4 @@
-module Sorts
+module Tests.Sorts
 
 open FsCheck.Xunit
 open IntroductionToAlgorithmsByCormen

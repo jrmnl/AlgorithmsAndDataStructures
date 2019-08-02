@@ -1,4 +1,4 @@
-﻿module Exercises
+﻿module Tests.Exercises
 
 open FsCheck.Xunit
 open IntroductionToAlgorithmsByCormen
@@ -52,3 +52,15 @@ let ``Find max subarray on all negative ints`` () =
     let ints = [| -25; -3; -3; -16; -23; -7; -5; -22; -4; |]
     let result = ints |> Exercises.findMaxSubarray
     result = (1, 1, -3)
+
+    
+[<Property>]
+let ``Find max subarray (brute force version)`` () =
+    let ints =
+        [| 13; -3; -25; 20; -3; -16; -23;
+            18; 20; -7; 12;
+            -5; -22; 15; -4; 7|]
+    
+    let result = ints |> Exercises.findMaxSubarrayBrute
+    
+    result = (7, 10, 43)

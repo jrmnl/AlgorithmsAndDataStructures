@@ -1,5 +1,7 @@
 ﻿namespace IntroductionToAlgorithmsByCormen
 
+open IntroductionToAlgorithmsByCormen.TupleUtils
+
 module Exercises =
 
     // 2.1-4
@@ -78,5 +80,30 @@ module Exercises =
             then rightLow, rightHigh, rightSum
             else crossLow, crossHigh, crossSum
             
-    let rec findMaxSubarray (array:int[]) =
+    let findMaxSubarray (array:int[]) =
         array |> findMaxSubarrayRec 0 (array.Length - 1)
+
+    // 4.1-2 Brute-force method of solving the maximum-subarray problem (4.1)
+    let findMaxSubarrayBrute (array:int[]) =
+        let findMaxSubarrayFrom index =
+            let mutable sum = array.[index]
+            let mutable maxSum = sum
+            let mutable maxSumIndex = index
+            for i = index + 1 to array.Length - 1 do
+                sum <- sum + array.[i]
+                if (sum > maxSum) then
+                    maxSum <- sum
+                    maxSumIndex <- i
+            index, maxSumIndex, maxSum
+
+        let mutable currentMax = (0, 0, array.[0])
+        for i = 0 to array.Length - 1 do
+            let result = findMaxSubarrayFrom i
+            let prevSum, newSum = thd currentMax, thd result
+            if (newSum > prevSum) then
+                currentMax <- result
+
+        currentMax
+
+
+                

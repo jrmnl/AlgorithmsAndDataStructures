@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Utils\SeqUtils.fs" />
+    <Compile Include="Utils.fs" />
     <Compile Include="Exercises.fs" />
     <Compile Include="Searches.fs" />
     <Compile Include="Sorts.fs" />
