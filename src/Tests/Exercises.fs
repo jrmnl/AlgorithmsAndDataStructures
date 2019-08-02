@@ -64,3 +64,14 @@ let ``Find max subarray (brute force version)`` () =
     let result = ints |> Exercises.findMaxSubarrayBrute
     
     result = (7, 10, 43)
+
+[<Property>]
+let ``Find max subarray (linear version)`` () =
+    let ints =
+        [| 13; -3; -25; 20; -3; -16; -23;
+            18; 20; -7; 12;
+            -5; -22; 15; -4; 7|]
+        
+    let result = ints |> Exercises.findMaxSubArrayLinear
+        
+    result = (7, 10, 43)

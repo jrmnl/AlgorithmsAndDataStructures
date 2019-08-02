@@ -40,7 +40,8 @@ module Exercises =
         // n
         sortedArray |> loop 0
 
-    // 4.1  The maximum-subarray problem. Find subarray with highest sum
+    // 4.1
+    // The maximum-subarray problem. Find subarray with highest sum
     let private findMaxCrossingSubarray low mid high (array:int[]) =
         let mutable sum = array.[mid]
         
@@ -83,7 +84,8 @@ module Exercises =
     let findMaxSubarray (array:int[]) =
         array |> findMaxSubarrayRec 0 (array.Length - 1)
 
-    // 4.1-2 Brute-force method of solving the maximum-subarray problem (4.1)
+    // 4.1-2
+    // Brute-force method of solving the maximum-subarray problem (4.1)
     let findMaxSubarrayBrute (array:int[]) =
         let findMaxSubarrayFrom index =
             let mutable sum = array.[index]
@@ -105,5 +107,18 @@ module Exercises =
 
         currentMax
 
+    // 4.1-5
+    // Linear version of solving the maximum-subarray problem (4.1)
+    let findMaxSubArrayLinear (array:int[]) =
+        let mutable left, right, sum = 0, 0, array.[0]
+        let mutable tempLeft, tempSum = 0, array.[0]
+        for i = 1 to array.Length - 1 do
+            tempSum <- max array.[i] (tempSum + array.[i])
+            if (tempSum > sum) then
+                left <- tempLeft
+                right <- i
+                sum <- tempSum
+            elif (tempSum = array.[i]) then
+                tempLeft <- i
 
-                
+        left, right, sum
