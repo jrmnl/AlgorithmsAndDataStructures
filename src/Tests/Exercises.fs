@@ -2,6 +2,7 @@
 
 open FsCheck.Xunit
 open IntroductionToAlgorithmsByCormen
+open MathNet.Numerics.LinearAlgebra
 
 [<Property>]
 let ``Binary adding works correctly`` () =
@@ -75,3 +76,15 @@ let ``Find max subarray (linear version)`` () =
     let result = ints |> Exercises.findMaxSubArrayLinear
         
     result = (7, 10, 43)
+
+[<Property>]
+let ``Standard square matrix multiply`` () =
+    let fisrt = array2D [ [1.0; 54.0; 3.0]; [6.0; 45.0; 6.0]; [78.0; 34.0; 12.0] ]
+    let second = array2D [ [11.0; 2.0; 4.0]; [12.0; 6.0; 67.0]; [66.0; 88.0; 99.0] ]
+    let a = DenseMatrix.ofArray2 fisrt
+    let b = DenseMatrix.ofArray2 second
+    let expectedResult = a.Multiply(b)
+
+    let result = Exercises.multiplySquareMatrix fisrt second |> DenseMatrix.ofArray2
+
+    result = expectedResult

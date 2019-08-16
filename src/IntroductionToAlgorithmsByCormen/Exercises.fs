@@ -122,3 +122,16 @@ module Exercises =
                 tempLeft <- i
 
         left, right, sum
+
+    // 4.2
+    // Standard matrix multiplication algorithm
+    let inline multiplySquareMatrix (a:'a[,]) (b:'a[,]) =
+        if (a.GetLength(0) <> b.GetLength(0)) then
+            failwith "Not square"
+        let length = a.GetLength(0)
+        let newArr =  Array2D.zeroCreate length length
+        for i = 0 to length - 1 do
+            for j = 0 to length - 1 do
+                for k = 0 to length - 1 do
+                    newArr.[i,j] <- newArr.[i,j] + a.[i,k] * b.[k,j]
+        newArr
