@@ -109,3 +109,11 @@ module MergeSortFunctionally =
              let sortedLeft = sort left
              let sortedRight = sort right
              merge sortedLeft sortedRight
+
+module HeapSort =
+    let sort (array:int[]) =
+        let sorted = Array.copy array
+        let heap = MaxHeap array
+        for i = array.Length - 1 downto 0 do
+            sorted.[i] <- heap.Pop()
+        sorted

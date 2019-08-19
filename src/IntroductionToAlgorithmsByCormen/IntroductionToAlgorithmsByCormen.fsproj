@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="MaxHeap.fs" />
     <Compile Include="Utils.fs" />
     <Compile Include="Searches.fs" />
     <Compile Include="Sorts.fs" />

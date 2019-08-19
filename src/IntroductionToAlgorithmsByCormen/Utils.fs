@@ -15,7 +15,7 @@ module BinaryUtils =
         | _ -> failwith "fatal"
 
 module TupleUtils =
-    let thd (_,_,c) = c
+    let thd (_,_,c) = c        
     
 [<RequireQualifiedAccess>]
 module Random =

@@ -7,7 +7,7 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "OkasakiDataStructures", "Ok
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "IntroductionToAlgorithmsByCormen", "IntroductionToAlgorithmsByCormen\IntroductionToAlgorithmsByCormen.fsproj", "{DF005433-5705-4ADE-89A5-75666C28B65D}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tests", "Tests\Tests.fsproj", "{F33EF019-7885-4B74-9B7A-DDAC11630D0D}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Tests", "Tests\Tests.fsproj", "{F33EF019-7885-4B74-9B7A-DDAC11630D0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -41,3 +41,8 @@ let ``Merge sort works correctly (Ascending)`` (unsorted:int[]) =
 let ``Merge sort functionally works correctly (Ascending)`` (unsorted:int list) =
     MergeSortFunctionally.sort unsorted
     |> isAscSorted
+
+[<Property>]
+let ``Heap sort works correctly`` (unsorted:int[]) =
+    HeapSort.sort unsorted
+    |> isAscSorted
