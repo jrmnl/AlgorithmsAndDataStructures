@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "OkasakiDataStructures", "OkasakiDataStructures\OkasakiDataStructures.fsproj", "{EFDB049E-6D1F-490F-8A92-26FE71A855CD}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "IntroductionToAlgorithmsByCormen", "IntroductionToAlgorithmsByCormen\IntroductionToAlgorithmsByCormen.fsproj", "{DF005433-5705-4ADE-89A5-75666C28B65D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CormenIntoductionToAlgorithms", "CormenIntoductionToAlgorithms\CormenIntoductionToAlgorithms.csproj", "{33E4EAC8-0791-452F-8B0D-9B7140AC54FA}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Tests", "Tests\Tests.fsproj", "{F33EF019-7885-4B74-9B7A-DDAC11630D0D}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "CormenIntoductionToAlgorithms.Tests", "CormenIntoductionToAlgorithms.Tests\CormenIntoductionToAlgorithms.Tests.fsproj", "{E64F2584-60B6-4F10-BE49-C20D47C07978}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{EFDB049E-6D1F-490F-8A92-26FE71A855CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFDB049E-6D1F-490F-8A92-26FE71A855CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFDB049E-6D1F-490F-8A92-26FE71A855CD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF005433-5705-4ADE-89A5-75666C28B65D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF005433-5705-4ADE-89A5-75666C28B65D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF005433-5705-4ADE-89A5-75666C28B65D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF005433-5705-4ADE-89A5-75666C28B65D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F33EF019-7885-4B74-9B7A-DDAC11630D0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F33EF019-7885-4B74-9B7A-DDAC11630D0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F33EF019-7885-4B74-9B7A-DDAC11630D0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F33EF019-7885-4B74-9B7A-DDAC11630D0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33E4EAC8-0791-452F-8B0D-9B7140AC54FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33E4EAC8-0791-452F-8B0D-9B7140AC54FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33E4EAC8-0791-452F-8B0D-9B7140AC54FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33E4EAC8-0791-452F-8B0D-9B7140AC54FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E64F2584-60B6-4F10-BE49-C20D47C07978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E64F2584-60B6-4F10-BE49-C20D47C07978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E64F2584-60B6-4F10-BE49-C20D47C07978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E64F2584-60B6-4F10-BE49-C20D47C07978}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

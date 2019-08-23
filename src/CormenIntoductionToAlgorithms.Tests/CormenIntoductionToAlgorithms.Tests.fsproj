@@ -15,14 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Utils.fs" />
-    <Compile Include="Exercises.fs" />
     <Compile Include="Searches.fs" />
     <Compile Include="Sorts.fs" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IntroductionToAlgorithmsByCormen\IntroductionToAlgorithmsByCormen.fsproj" />
+    <ProjectReference Include="..\CormenIntoductionToAlgorithms\CormenIntoductionToAlgorithms.csproj" />
   </ItemGroup>
 
 </Project>
