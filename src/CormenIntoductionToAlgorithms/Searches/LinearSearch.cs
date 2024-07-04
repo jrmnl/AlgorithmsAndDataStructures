@@ -1,17 +1,16 @@
-﻿namespace CormenIntoductionToAlgorithms.Searches
+﻿namespace CormenIntoductionToAlgorithms.Searches;
+
+public static class LinearSearch
 {
-    public static class LinearSearch
+    public static int? Find(int[] array, int element)
     {
-        public static int? Find(int[] array, int element)
+        for (int i = 0; i < array.Length; i++)
         {
-            for (int i = 0; i < array.Length; i++)
+            if (array[i] == element)
             {
-                if (array[i] == element)
-                {
-                    return i;
-                }
+                return i;
             }
-            return null;
         }
+        return null;
     }
 }

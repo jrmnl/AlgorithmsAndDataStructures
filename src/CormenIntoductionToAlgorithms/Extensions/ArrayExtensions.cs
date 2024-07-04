@@ -1,24 +1,36 @@
 ﻿using System;
 
-namespace CormenIntoductionToAlgorithms.Extensions
+namespace CormenIntoductionToAlgorithms.Extensions;
+
+public static class ArrayExtensions
 {
-    public static class ArrayExtensions
+    public static T[] CopySubarray<T>(this T[] array, int begin, int end)
     {
-        public static T[] CopySubarray<T>(this T[] array, int begin, int end)
+        var newArray = new T[end - begin + 1];
+        for (int i = 0; i < newArray.Length; i++)
         {
-            var newArray = new T[end - begin + 1];
-            for (int i = 0; i < newArray.Length; i++)
+            newArray[i] = array[i + begin];
+        }
+        return newArray;
+    }
+
+    public static T? GetElementOrNull<T>(this T[] array, int index) where T : struct
+    {
+        if (index < 0) throw new InvalidOperationException();
+        if (index >= array.Length) return null;
+        return array[index];
+    }
+
+    public static int? FindIndex<T>(this T[] array, T element) where T : struct
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i].Equals(element))
             {
-                newArray[i] = array[i + begin];
+                return i;
             }
-            return newArray;
         }
 
-        public static T? GetElementOrNull<T>(this T[] array, int index) where T : struct
-        {
-            if (index < 0) throw new InvalidOperationException();
-            if (index >= array.Length) return null;
-            return array[index];
-        }
+        return null;
     }
 }
