@@ -48,7 +48,7 @@ public static class MergeSort
             }
             else
             {
-                array[i] = right.Value;
+                array[i] = right!.Value;
                 r++;
             }
         }
